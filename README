@@ -1,0 +1,9 @@
+Window Based Reliable Data Transfer Protocol
+Winter 2017
+
+Shannon Tom 
+Michelle Tran
+
+UDP is a low-overhead data transfer protocol that does not account for lost or re-ordered packets. This project manually bulids reliability by mimicking the Selective Repeat Protocol over UDP sockets to create a window-based reliable data transfer protocol. 
+
+The client and server engage in a 3-way handshake to ensablish a connection. A server listens for ACK packets in order to ensure that a sent data packet has been recieved. The server may resend packets upoun timeout implemented with the <sys/select.h> library. The connection is closed using a FIN-ACK protocol. 
